@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #d9f7df;
+    color: #333; /* Default text color */
+}
+
+.header {
+    background-color: #2ecc71; /* Green background for the header */
+    color: #fff; /* White text color for the header */
+    text-align: center;
+    padding: 15px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    justify-content: space-around; /* Center the items horizontally */
+    padding: 20px;
+}
+
+.emergency-response {
+    width: 100%;
+    max-width: 600px; /* Limit the width on larger screens */
+    padding: 20px;
+    background-color: #bceead;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    margin-bottom: 20px;
+}
+
+.weather-forecast {
+    width: 100%;
+    max-width: 400px; /* Limit the width on larger screens */
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    margin-bottom: 20px;
+}
+
+.sub-section {
+    background-color: #fff; /* White background for subsections */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    margin-bottom: 20px;
+}
+
+/* Style for images within the emergency-response div */
+.emergency-response img {
+    max-width: 100%; /* Make sure images don't exceed the container width */
+    border-radius: 8px; /* Add a slight border-radius to images */
+}
+
+/* Style for welcome text within the emergency-response div */
+.welcome {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .emergency-response,
+    .weather-forecast,
+    .sub-section {
+        width: 100%;
+        max-width: none; /* Reset max-width for full width on smaller screens */
+    }
+}
