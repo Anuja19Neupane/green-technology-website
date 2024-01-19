@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script
-      src="https://kit.fontawesome.com/170b2fd3fe.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- Loader -->
-    <script
-      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
-      type="module"
-    ></script>
+    <title>Emergency Alert</title>
     <style>
         /* Additional styles for better visibility and distinct colors */
-        .sub-section.soil-erosion { background-color: #8CD790; }
-        .sub-section.flood { background-color: #6fb7d2; }
-        .sub-section.forest-fire { background-color: #a39436; }
-        .sub-section.landslides { background-color: #65bc9c; }
-        .sub-section.earthquake { background-color: #1e8489; }
+        .sub-section.soil-erosion {
+            background-color: #8CD790;
+        }
+
+        .sub-section.flood {
+            background-color: #6fb7d2;
+        }
+
+        .sub-section.forest-fire {
+            background-color: #a39436;
+        }
+
+        .sub-section.landslides {
+            background-color: #65bc9c;
+        }
+
+        .sub-section.earthquake {
+            background-color: #1e8489;
+        }
 
         /* Style for the "Read More" link */
         .read-more {
@@ -30,19 +34,22 @@
             text-align: right;
             margin-top: 10px;
             cursor: pointer;
-            color: #3498db; /* Blue color for the link */
+            color: #3498db;
+            /* Blue color for the link */
         }
 
         /* Adjusted styling for the weather-forecast div */
         .weather-forecast {
             width: 100%;
             max-width: 400px;
-            padding: 20px; /* Increased padding for better visibility */
+            padding: 20px;
+            /* Increased padding for better visibility */
             background-color: #f1f1f1;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            text-align: center; /* Center text */
+            text-align: center;
+            /* Center text */
         }
 
         /* Flex container for horizontal alignment */
@@ -63,69 +70,85 @@
             text-align: center;
             margin-bottom: 20px;
             font-style: italic;
-            color: #4CAF50; /* Green color */
-            font-size: 1.5em; /* Enlarged font size */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Catchy font */
-            background-color: #d9f7df; /* Light green background */
-            padding: 20px; /* Increased padding for better visibility */
+            color: #4CAF50;
+            /* Green color */
+            font-size: 1.5em;
+            /* Enlarged font size */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Catchy font */
+            background-color: #d9f7df;
+            /* Light green background */
+            padding: 20px;
+            /* Increased padding for better visibility */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Button styling */
+        .weather-button {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
     </style>
-    <title>Emergency Alert</title>
 </head>
+
 <body>
     <div class="header">
         <h1>Emergency Response and Disaster Management</h1>
     </div>
     <div class="content">
         <div class="welcome-paragraph">
-            <p>Welcome to the website where technology meets emergency response! Here, we monitor data, predict disasters, and keep you well-updated with detailed information. Stay tuned for more!</p>
+            <p>Welcome to the website where technology meets emergency response! Here, we monitor data, predict
+                disasters, and keep you well-updated with detailed information. Stay tuned for more!</p>
         </div>
         <img src="images/Screenshot 2024-01-18 at 21.19.13.png" alt="">
-            <img src="images/Screenshot 2024-01-18 at 21.17.11.png" alt="">
+        <img src="images/Screenshot 2024-01-18 at 21.17.11.png" alt="">
 
         <div class="emergency-response horizontal-align">
-            <div class="sub-section soil-erosion" onclick="enlarge(this)">
+            <div class="sub-section soil-erosion" onclick="openPage('soil-erosion.html')">
                 <h2>Soil Erosion</h2>
-                <p>Details about soil erosion...</p>
                 <a class="read-more" href="#">Read More</a>
             </div>
-            <div class="sub-section flood" onclick="enlarge(this)">
+            <div class="sub-section flood" onclick="openPage('flood.html')">
                 <h2>Flood</h2>
-                <p>Details about flood...</p>
                 <a class="read-more" href="#">Read More</a>
             </div>
-            <div class="sub-section landslides" onclick="enlarge(this)">
+            <div class="sub-section landslides" onclick="openPage('landslide.html')">
                 <h2>Landslides</h2>
-                <p>Details about landslides...</p>
                 <a class="read-more" href="#">Read More</a>
             </div>
-            <div class="sub-section forest-fire" onclick="enlarge(this)">
+            <div class="sub-section forest-fire" onclick="openPage('forest-fire.html')">
                 <h2>Forest Fire</h2>
-                <p>Details about forest fire...</p>
                 <a class="read-more" href="#">Read More</a>
             </div>
-            <div class="sub-section earthquake" onclick="enlarge(this)">
+            <div class="sub-section earthquake" onclick="openPage('earthquake.html')">
                 <h2>Earthquake</h2>
-                <p>Details about earthquake...</p>
                 <a class="read-more" href="#">Read More</a>
             </div>
         </div>
         <div class="weather-forecast">
             <p>Weather Forecast</p>
-            
-            
+            <button class="weather-button" onclick="openWeatherForecast()">View Forecast</button>
         </div>
     </div>
 
     <!-- Include the weather.js script -->
     <script src="path/to/weather.js"></script>
     <script>
-        function enlarge(element) {
-            // Toggle the "enlarged" class on click
-            element.classList.toggle('enlarged');
+        function openPage(page) {
+            window.open(page, '_blank');
+        }
+
+        function openWeatherForecast() {
+            window.open('weather-forecast.html', '_blank');
         }
     </script>
 </body>
+
 </html>
